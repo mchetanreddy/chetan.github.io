@@ -5,7 +5,6 @@
 $sendTo = 'him@chetanreddy.com'; // Add Your Email
 $subject = 'chetanreddy.com contact form';
 $fields = array('name' => 'Name', 'subject' => 'Subject', 'email' => 'Email', 'message' => 'Message'); // array variable name => Text to appear in the email
-$from = $fields['email'];
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
@@ -19,6 +18,9 @@ try
 
         if (isset($fields[$key])) {
             $emailText .= "$fields[$key]: $value\n";
+            if ($fields[$key] == 'Email') {
+              $from = $value;
+            }
         }
     }
 
