@@ -29,7 +29,7 @@ try
     
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
-    $responseArray = array('type' => 'success', 'message' => $okMessage);
+    $responseArray = array('type' => 'success', 'message' => $okMessage, 'data': {successMsg:'I'll get back to you shortly.});
 }
 catch (\Exception $e)
 {
