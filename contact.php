@@ -1,10 +1,11 @@
 <?php
 
 // configure
-$from = 'him@chetanreddy.com';
+
 $sendTo = 'him@chetanreddy.com'; // Add Your Email
 $subject = 'chetanreddy.com contact form';
 $fields = array('name' => 'Name', 'subject' => 'Subject', 'email' => 'Email', 'message' => 'Message'); // array variable name => Text to appear in the email
+$from = $fields['email'];
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
@@ -29,7 +30,7 @@ try
     
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
-    $responseArray = array('type' => 'success', 'message' => $okMessage, 'data': {successMsg:'I'll get back to you shortly.});
+    $responseArray = array('type' => 'success', 'message' => $okMessage);
 }
 catch (\Exception $e)
 {
