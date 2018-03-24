@@ -183,7 +183,7 @@ $(window).on("load",function (){
 
     $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+            var url = "http://www.e3globalinc.com/contact.php";
 
             $.ajax({
                 type: "POST",
