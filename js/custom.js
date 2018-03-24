@@ -196,7 +196,7 @@ $(window).on("load",function (){
                     var msg = 'Ill get back to you shortly';
 
                     var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + msg + '</div>';
-                    if (messageAlert && messageText) {
+                    if (messageAlert && msg) {
                         $('#contact-form').find('.messages').html(alertBox);
                         $('#contact-form')[0].reset();
                     }
