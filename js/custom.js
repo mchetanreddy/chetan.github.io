@@ -191,10 +191,11 @@ $(window).on("load",function (){
                 data: $(this).serialize(),
                 success: function (data)
                 {
-                    var messageAlert = 'alert-' + data.type;
+                    var messageAlert = 'alert';
                     var messageText = data.message;
+                    var msg = 'Ill get back to you shortly';
 
-                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + msg + '</div>';
                     if (messageAlert && messageText) {
                         $('#contact-form').find('.messages').html(alertBox);
                         $('#contact-form')[0].reset();
